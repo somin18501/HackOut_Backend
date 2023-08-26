@@ -12,7 +12,7 @@ console.log("Developement", process.env.production);
 connectDB();
 PMS.use(
   cors({
-    origin: "https://hackout2023.vercel.app",
+    origin: "https://64ea84b1c2bf4d042cbc5df3--fastidious-swan-f16923.netlify.app",
     // origin: "http://localhost:3000",
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
