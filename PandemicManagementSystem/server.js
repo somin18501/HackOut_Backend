@@ -8,12 +8,12 @@ const PMS = express();
 dotenv.config({ path: "config.env" });
 const PORT = process.env.PORT || 8000;
 
-console.log("Developement", process.env.production);
+// console.log("Developement", process.env.production);
 connectDB();
 PMS.use(
   cors({
-    origin: "https://64ea84b1c2bf4d042cbc5df3--fastidious-swan-f16923.netlify.app",
-    // origin: "http://localhost:3000",
+    // origin: "https://hackout2023.vercel.app",
+    origin: "http://localhost:3001",
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
 );

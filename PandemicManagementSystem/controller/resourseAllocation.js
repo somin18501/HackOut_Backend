@@ -156,3 +156,51 @@ exports.hostpitalAllocation = async (req, res) => {
         res.status(500).send(err);
     }
 }
+
+
+exports.getHospitals = async (req, res) => {
+    try {
+        const hospitals = await hospital.find();
+        let x = []
+        for (let i = 0; i < hospitals.length; i++) {
+            x.push({ available: hospitals[i].capacity - hospitals[i].count.patient, name: hospitals[i].name, active: hospitals[i].count.patient });
+        }
+        x.sort((a, b) => {
+            return b.available - a.available;
+        });
+        let ans = [];
+        ans.push(['key','Available Beds', 'Active Patients', { role: 'annotation' }])
+        for (let i = 0; i < Math.min(10, x.length); i++) {
+            ans.push([x[i].name,x[i].available,x[i].active,'']);
+        }
+        res.status(200).json(ans);
+
+
+    } catch (err) {
+        res.status(500).send(err);
+    }
+}
+
+exports.getPatient = async (req, res) => {
+    try {
+        const hospitals = await hospital.find();
+        let x = []
+        for (let i = 0; i < hospitals.length; i++) {
+            x.push({ ratio1: hospitals[i].count.patient / hospitals[i].count.doctor, ratio2: hospitals[i].count.patient / hospitals[i].count.nurse, name: hospitals[i].name, active: hospitals[i].count.patient });
+        }
+        x.sort((a, b) => {
+            return b.ratio1 - a.ratio1;
+        });
+        let ans = [];
+        ans.push(['key','Patient to doctor ratio', 'Patient to nurse ratio', { role: 'annotation' }])
+
+        for (let i = 0; i < 10 && i < x.length; i++) {
+            ans.push([x[i].name, x[i].ratio1, x[i].ratio2, '']);
+        }
+        res.status(200).json(ans);
+    }
+    catch (err) {
+        res.status(500).send(err);
+
+    }
+}

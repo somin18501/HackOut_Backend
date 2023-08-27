@@ -31,6 +31,10 @@ route.patch("/update/hospitals", workforceController.updateHospitals);
 
 route.post("/get/nearHospitals", publicController.nearHospitals);
 
+route.get("/get/topHospitals", resourseAllocation.getHospitals);
+
+route.get("/get/getPatient", resourseAllocation.getPatient);
+
 
 // lab related routes
 route.post("/add/lab", labController.createLab);
