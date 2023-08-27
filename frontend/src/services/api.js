@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URI = "https://pms-hackout23.onrender.com";
-const API_URI = "http://localhost:8000";
+const API_URI = "https://pms-hackout.onrender.com";
+// const API_URI = "http://localhost:8000";
 
 export const Login = async (data) => {
   try {
