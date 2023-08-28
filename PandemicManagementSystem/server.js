@@ -13,7 +13,7 @@ connectDB();
 PMS.use(
   cors({
     origin: "https://64eb76a704ddee75f6bdd143--fastidious-swan-f16923.netlify.app",
-    // origin: "http://localhost:3001",
+    // origin: "http://localhost:3000",
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
 );

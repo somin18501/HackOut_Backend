@@ -1,4 +1,5 @@
 var { User, hospital } = require('../model/model');
+const fetch = require("node-fetch");
 
 exports.hostpitalAllocation = async (req, res) => {
     if (!req.body) {

@@ -1,6 +1,6 @@
 var { Medical } = require('../model/model');
 const bcrypt = require("bcrypt");
-
+const fetch = require("node-fetch");
 
 exports.medicineAllocation = async (req, res) => {
     if (!req.body) {

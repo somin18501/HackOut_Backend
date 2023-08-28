@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res) => {
     if (!req.body) {
-        res.status(400).send({ message: "Content can not be empty!" });
+        res.status(400).send({ message: "Content can not be empty!", success: false });
         return;
     }
 

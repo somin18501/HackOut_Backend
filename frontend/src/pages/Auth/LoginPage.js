@@ -23,6 +23,7 @@ export default function LoginPage() {
             role: formInput.role
         }
         const { success, token } = await Login(data);
+        // console.log(token);
         if(success){
             localStorage.setItem('token', JSON.stringify(token));
             const obj = {
