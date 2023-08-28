@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "pms-hackout-2023",
     "builds":[
         {
             "src":"./server.js",
