@@ -1,6 +1,5 @@
 const { Lab } = require("../model/model");
 const bcrypt = require("bcrypt");
-const fetch = require("node-fetch");
 
 exports.labsAllocation = async (req, res) => {
   if (!req.body) {

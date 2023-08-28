@@ -1,5 +1,4 @@
 var { hospital } = require('../model/model');
-const fetch = require("node-fetch");
 
 exports.nearHospitals = async (req, res) => {
     if (!req.body) {

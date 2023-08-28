@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "PMS-HackOut-2023",
+    "builds":[
+        {
+            "src":"./server.js",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"/"
+        }
+    ]
+}
