@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 PMS.use(
   cors({
-    origin: "https://64eb76a704ddee75f6bdd143--fastidious-swan-f16923.netlify.app",
+    origin: "https://64ec5d238de23f6fbb29b6a2--fastidious-swan-f16923.netlify.app",
     // origin: "http://localhost:3000",
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
   })
